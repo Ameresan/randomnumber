@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <style>
+            #style1{
+                border: 1px solid black;
+                /* display: flex; */
+                width: 500px;
+                height: 500px;
+                /* align-items: center; */
+                
+                
+                /* border-radius: 50%; */
+                
+                
+            }
+            body{
+                display: flex;
+                justify-content: center;
+            
+                
+            }
+            #style2{
+                
+                text-align: center;
+                margin-top: 200px;
+                border-radius: 100px;
+                
+                
+            }
+            
+            
+        </style>
+    </head>
+</head>
+<body>
+    
+    <div id="style1">
+    <div id="style2">
+    <h1>GUESS THE RANDOM NUMBER</h1>
+    <label>Enter value:</label>
+    <input id="a">
+    <p id="store">THE VALUE IS:</p>
+    
+    <button onclick="cal()">CLICK</button>
+    <p id="score"></p>
+    </div>
+    </div>
+    <script>
+        var box1=document.getElementById("a");
+        var b=document.getElementById("store");
+        var s=document.getElementById("score");
+        var t=Math.floor(Math.random()*10)+1;
+        var s1=document.getElementById("style1");
+    
+        var score=10;
+        function cal(){
+        var m=Number(box1.value);
+            b.innerHTML=m;
+
+
+            if(m==t){
+                s.innerHTML="your have win"+score;
+                s1.style.borderRadius="50%";
+                s1.style.backgroundColor="green";
+
+            }
+            else{
+                score=score-1;
+                s.innerHTML="wrong"+ score;
+
+                
+            }
+
+        
+        }
+       
+    </script>
+</body>
+</html>
